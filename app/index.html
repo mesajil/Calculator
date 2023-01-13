@@ -9,6 +9,51 @@
 <body>
     <h1>Calculadora de ingeniería</h1>
     <p>Bienvenido a la calculadora de ingeniería económica. Esta calculadora te permite definir fórmulas comunes aritméticas y los factores de equivalencia propios de la ingeniería económica.</p>
-    
+    <div>
+        <p>Ingrese la fórmula a calcular y haga clic en el botón de calcular resultado.</p>
+        <textarea id="textarea-input" rows="4" cols="50"></textarea>    
+    </div>
+    <div>
+        <button onclick="calculate()">Calcular resultado</button>
+        <textarea id="textarea-output" rows="4" cols="50"></textarea>
+    </div>
+
+    <script>
+        function calculate () {
+            document.getElementById("textarea-output").innerHTML = eval(document.getElementById("textarea-input").value);
+        }
+        function PF (i, n) {
+            return 1/(1 + i) ** n
+        }
+
+        function FP (i, n) {
+            return (1 + i) ** n
+        }
+
+        function PA_UNIFORME (i, n) {
+            temp = (1 + i) ** n
+            return (temp - 1) / (temp * i)
+        }
+
+        function PA_INFINITA (i) {
+            return 1/i
+        }
+
+        function FA_UNIFORME (i, n) {
+            temp = (1 + i) ** n
+            return (temp - 1) / i
+        }   
+        
+        function PG_TRIANGULO (i, n) {
+            temp = (1 + i) ** n
+            return (temp - 1) / (temp * i ** 2) - n / (temp * i)
+        }
+
+        function PA_GEOMETRICA (i, g, n) {
+            if (i != g) {
+                return (1 - ((1 + g) / (1 + i)) ** n) / (i - g)
+            }
+        }
+    </script> 
 </body>
 </html>

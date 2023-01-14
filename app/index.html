@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
     <title>Calculator</title>
 </head>
 <body>
     <h1>Calculadora de ingeniería</h1>
     <p>Bienvenido a la calculadora de ingeniería económica. Esta calculadora te permite definir fórmulas comunes aritméticas y los factores de equivalencia propios de la ingeniería económica.</p>
-    <div>
-        <p>Ingrese la fórmula a calcular y haga clic en el botón de calcular resultado.</p>
+    <p>Ingrese la fórmula a calcular y haga clic en el botón de calcular resultado.</p>
+    <div id="input-div">
         <textarea id="textarea-input" rows="4" cols="50"></textarea>    
     </div>
-    <div>
-        <button onclick="calculate()">Calcular resultado</button>
-        <textarea id="textarea-output" rows="4" cols="50"></textarea>
+    <div id="output-div">
+        <button id="output-button" onclick="calculate()">Calcular resultado</button>
+        <textarea id="textarea-output" rows="1" cols="50"></textarea>
     </div>
 
     <script>
